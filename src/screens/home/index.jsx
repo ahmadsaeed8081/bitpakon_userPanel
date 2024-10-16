@@ -265,7 +265,6 @@ const waitForTransaction2 = useWaitForTransaction({
 
 
 
-      console.log("pol done" );
 
       //DU contract data
 
@@ -279,7 +278,8 @@ const waitForTransaction2 = useWaitForTransaction({
 
       const withdrawFee = await contract1.methods.withdrawFee().call();
 
-      const OrdersList = await contract1.methods.get_userOrders().call();
+      const OrdersList = await contract1.methods.get_userOrders().call({ from: address.toString() });
+      console.log(OrdersList );
 
       if (id != null) {
 

@@ -1,5 +1,17 @@
 import React from "react";
+import moment from "moment";
+
+
 const About = ({withdrawList,Allinvestment}) => {
+
+  const count = (time) => {
+    const now = new Date(time*1000);  
+    const t=moment(now).format('D MMM YYYY');
+    return t;
+    
+  };
+
+
   return (
     <div id="aboutSection" className="  container  tw-py-20">
       <h1 className=" tw-pl-8 gradient-text tw-font-bold tw-text-center">
@@ -43,7 +55,7 @@ const About = ({withdrawList,Allinvestment}) => {
           </thead>
           <tbody className=" ">
             <>
-            {Allinvestment.map((item,index)=>{
+            {Allinvestment.map((item,index)=>(
 
               <tr className="tw-bg-[#101012] tw-rounded-md">
                 <td className="tw-align-middle   tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
@@ -55,11 +67,11 @@ const About = ({withdrawList,Allinvestment}) => {
                   </span>
                 </td>
                 <td className="tw-align-middle  tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
-                  <span className=" tw-text-white tw-font-poppins">${Number(item[0])}</span>
+                  <span className=" tw-text-white tw-font-poppins">${Number(item[0])/10**6}</span>
                 </td>
                 <td className="tw-align-middle tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
                   <span className=" tw-text-white tw-font-poppins">
-                  {item[2]}
+                  {count(Number(item[2]))}
                   </span>
                 </td>
                 <td className="tw-align-middle  tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
@@ -69,9 +81,9 @@ const About = ({withdrawList,Allinvestment}) => {
                 </td>
               </tr>
 
-            })}
+            ))}
 
-            {withdrawList.map((item,index)=>{
+            {withdrawList.map((item,index)=>(
 
             <tr className="tw-bg-[#101012] tw-rounded-md">
               <td className="tw-align-middle   tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
@@ -83,21 +95,21 @@ const About = ({withdrawList,Allinvestment}) => {
                 </span>
               </td>
               <td className="tw-align-middle  tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
-                <span className=" tw-text-white tw-font-poppins">${Number(item[2])}</span>
+                <span className=" tw-text-white tw-font-poppins">${Number(item[2])/10**18}</span>
               </td>
               <td className="tw-align-middle tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
                 <span className=" tw-text-white tw-font-poppins">
-                {item[3]}
+                {count(Number(item[3]))}
                 </span>
               </td>
               <td className="tw-align-middle  tw-font-medium  tw-px-6 tw-py-5 tw-whitespace-nowrap tw-text-center">
                 <span className=" tw-text-white tw-font-poppins">
-                  {item[3]==true?("complete"):("Under Processing")}
+                  {item[4]==true?("complete"):("Under Processing")}
                 </span>
               </td>
             </tr>
 
-            })}
+            ))}
               
             </>
           </tbody>
