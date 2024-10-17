@@ -109,8 +109,8 @@ contract Bitpakon
             user[msg.sender].total_roi+=_investedamount*10/100;
             user[msg.sender].investment[num].roi = user[msg.sender].total_roi;
 
-            address temp;
             USDT(usdt_address).transferFrom(msg.sender,owner,_investedamount);
+            address temp;
 
             if(user[msg.sender].investBefore == false)
             {  

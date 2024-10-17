@@ -1,5 +1,5 @@
-export const poly_cont_address="0xCe75Ca6Ea76B7c80587CdfffDE4D7F9737F1497F"; 
-export const du_cont_address="0xE7856b73aD91FC4efF91849454957cda1dBCE4b1"; 
+export const poly_cont_address="0x9F131d132bc32A750305Af2C5c22decfbCf9B025"; 
+export const du_cont_address="0x6414662e9cAa9C65C9b062cf921F4f3BF0f7acCd"; 
 export const usdt_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 
