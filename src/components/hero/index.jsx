@@ -3,10 +3,14 @@ import Header from "../header";
 import Staking from "../../screens/Staking";
 import { GoCopy } from "react-icons/go";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Hero = (props) => {
 // refCount={refCount} availBalance={availBalance} du_balance={du_balance} RoiEarning={RoiEarning} directs={directs} levelEarning={levelEarning} total_withdraw_reaward={total_withdraw_reaward} totalReferralsEarning={totalReferralsEarning} withdraw_Amount={withdraw_Amount} setInvestment={setInvestment}  minimum_investment={minimum_investment}  Invest={Invest} set_withdraw_Amount={set_withdraw_Amount}  WithdrawReward={WithdrawReward} investment={investment} totlaInvestment={totlaInvestment} totalEarning={totalEarning} address={address}
-  return (
+const notify = () => toast("Referral link s copied!");
+  
+
+return (
     <div className="   tw-bg-cover tw-relative tw-bg-center tw-w-full tw-h-auto">
       <Header />
 
@@ -70,13 +74,13 @@ const Hero = (props) => {
                   </span>
                 </div>
               </div>
-              <div className=" col-md-12">
+              <div className=" col-md-12 tw-z-50">
                 <div className=" tw-border  tw-border-[#EFF3A1] tw-rounded-bl-3xl  tw-rounded-tr-3xl  p-4">
                   <h6 className="  tw-text-white  tw-font-poppins tw-flex tw-gap-3 tw-items-center">
                     My Link 
                     
                     <CopyToClipboard text={`${window.location.host}?ref=${props.address}`} >
-                    <GoCopy size={23} color="#fff" />
+                    <GoCopy onClick={notify} size={23} color="#fff" />
                     </CopyToClipboard> 
                   </h6>
                   <span className="  tw-text-[#EFF3A1] tw-font-poppins tw-text-lg">
@@ -109,7 +113,8 @@ const Hero = (props) => {
 
 
      
-     
+      <ToastContainer />
+
     </div>
   );
 };
