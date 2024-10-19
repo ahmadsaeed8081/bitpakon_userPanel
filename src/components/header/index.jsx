@@ -68,7 +68,7 @@ const Header = () => {
         </div>
 
         
-        <div className="">
+        <div className="tw-z-50">
           <Button
             onClick={() => open()}
             Icons={<img src={require('../../assets/images/wallet.png')} />}
