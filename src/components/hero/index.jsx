@@ -66,7 +66,7 @@ const Hero = (props) => {
                   </h6>
                   <span className="  tw-text-white tw-font-poppins tw-text-lg">
                     {" "}
-                    {Number(props.totalReferralsEarning)}
+                    {Number(props.totalReferralsEarning)/10**6}
                   </span>
                 </div>
               </div>
